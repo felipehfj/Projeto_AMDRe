@@ -1,4 +1,5 @@
-Projeto_AMDRe
+Projeto AMDRe
+Autômato de Monitoramento de Depósito de Resíduos
 =============
 
 Projeto do robô de monitoramento de ambientes
