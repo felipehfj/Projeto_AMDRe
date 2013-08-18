@@ -2,10 +2,9 @@
  Biblioteca diferencial
  Utilizada para abstrair o controle do movimento diferencial de rodas
  de veiculos moveis terrestres que utilizam ponte H.
- 
- Criada por Felipe Ferreira, 28MAI2013
- 
- 
+
+ Criada por Felipe Ferreira
+
 **************************/
 #if (ARDUINO >= 100)
 	#include <Arduino.h>
@@ -21,9 +20,16 @@
 
 class Diferencial{
 	private:
-		Diferencial(Motor d, Motor e){};
+        #atributos
+		Motor _motordireito;
+		Motor _motoresquerdo;
+        #metodos
+		Diferencial(Motor direito, Motor esquerdo){
+            this->_motordireito = direita;
+            this->_motoresquerdo = esquerdo;
+		};
 		~Diferencial(){};
-	
+
 	public:
 		void direita(){};
 		void esquerda(){};
