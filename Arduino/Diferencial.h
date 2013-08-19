@@ -21,13 +21,15 @@
 
 class Diferencial{
 	private:
-        #atributos
+        //atributos
 		Motor _motorDireito;
 		Motor _motorEsquerdo;
 		uint8_t _velocidade;
 
 	public:
-        #metodos
+        //metodos
+        Diferencial(){};
+
 		Diferencial(Motor direito, Motor esquerdo){
             this->_motorDireito = direito;
             this->_motorEsquerdo = esquerdo;
