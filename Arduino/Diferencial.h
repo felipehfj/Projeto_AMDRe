@@ -8,9 +8,9 @@
 */
 
 #if (ARDUINO >= 100)
-	#include <Arduino.h>
+#include <Arduino.h>
 #else
-	#include <WProgram.h>
+#include <WProgram.h>
 #endif
 
 #ifndef DIFERENCIAL_H
@@ -19,59 +19,69 @@
 #include <Motor.h>
 
 
-class Diferencial{
-	private:
-        //atributos
-		Motor _motorDireito;
-		Motor _motorEsquerdo;
-		uint8_t _velocidade;
+class Diferencial
+{
+private:
+    //atributos
+    Motor _motorDireito;
+    Motor _motorEsquerdo;
+    uint8_t _velocidade;
 
-	public:
-        //metodos
-        Diferencial(){};
+public:
+    //metodos
+    Diferencial() {};
 
-		Diferencial(Motor direito, Motor esquerdo){
-            this->_motorDireito = direito;
-            this->_motorEsquerdo = esquerdo;
-		};
+    Diferencial(Motor direito, Motor esquerdo)
+    {
+        this->_motorDireito = direito;
+        this->_motorEsquerdo = esquerdo;
+    };
 
-		~Diferencial(){
+    ~Diferencial()
+    {
 
-		};
-		void direita(){
-            this->_motorDireito.frente();
-            this->_motorEsquerdo.tras();
-		};
+    };
+    void direita()
+    {
+        this->_motorDireito.frente();
+        this->_motorEsquerdo.tras();
+    };
 
-		void esquerda(){
-            this->_motorDireito.tras();
-            this->_motorEsquerdo.frente();
-		};
+    void esquerda()
+    {
+        this->_motorDireito.tras();
+        this->_motorEsquerdo.frente();
+    };
 
-		void frente(){
-            this->_motorDireito.frente();
-            this->_motorEsquerdo.frente();
-		};
+    void frente()
+    {
+        this->_motorDireito.frente();
+        this->_motorEsquerdo.frente();
+    };
 
-		void tras(){
-            this->_motorDireito.tras();
-            this->_motorEsquerdo.tras();
-		};
+    void tras()
+    {
+        this->_motorDireito.tras();
+        this->_motorEsquerdo.tras();
+    };
 
-		void parar(){
-            this->_motorDireito.parar();
-            this->_motorEsquerdo.parar();
-		};
+    void parar()
+    {
+        this->_motorDireito.parar();
+        this->_motorEsquerdo.parar();
+    };
 
-		void alteraVelocidade(uint8_t velocidade){
-            uint8_t velocidadeMotorDireito = this->_motorDireito.getVelocidade();
-            uint8_t velocidadeMotorEsquerdo = this->_motorEsquerdo.getVelocidade();
+    void alteraVelocidade(uint8_t velocidade)
+    {
+        uint8_t velocidadeMotorDireito = this->_motorDireito.getVelocidade();
+        uint8_t velocidadeMotorEsquerdo = this->_motorEsquerdo.getVelocidade();
 
-            if((velocidadeMotorDireito && velocidadeMotorEsquerdo) != velocidade){
-                this->_motorDireito.setVelocidade(velocidade);
-                this->_motorEsquerdo.setVelocidade(velocidade);
-            }
-		};
+        if((velocidadeMotorDireito && velocidadeMotorEsquerdo) != velocidade)
+        {
+            this->_motorDireito.setVelocidade(velocidade);
+            this->_motorEsquerdo.setVelocidade(velocidade);
+        }
+    };
 
 };
 #endif
