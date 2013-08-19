@@ -34,8 +34,7 @@ class Diferencial{
 		};
 
 		~Diferencial(){
-            delete(this->_motorDireito);
-            delete(this->_motorEsquerdo);
+
 		};
 		void direita(){
             this->_motorDireito.frente();
