@@ -25,6 +25,8 @@ class Diferencial{
 		Motor _motorDireito;
 		Motor _motorEsquerdo;
 		uint8_t _velocidade;
+
+	public:
         #metodos
 		Diferencial(Motor direito, Motor esquerdo){
             this->_motorDireito = direito;
@@ -35,8 +37,6 @@ class Diferencial{
             delete(this->_motorDireito);
             delete(this->_motorEsquerdo);
 		};
-
-	public:
 		void direita(){
             this->_motorDireito.frente();
             this->_motorEsquerdo.tras();

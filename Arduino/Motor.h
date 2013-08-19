@@ -24,6 +24,8 @@ class Motor{
         uint8_t _pinoB;
         bool _inverso;
         uint8_t _velocidade; // PWM
+
+	public:
         #metodos
 		Motor(uint8_t pinoA, uint8_t pinoB, bool inverso = false, uint8_t velocidade = 128){
             setPinoA(pinoA);
@@ -57,8 +59,6 @@ class Motor{
 		bool isInverso(){
             return this->_inverso;
 		};
-
-	public:
         void setVelocidade(uint8_t velocidade = 128){
             this->_velocidade = velocidade;
         };
