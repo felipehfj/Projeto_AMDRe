@@ -19,14 +19,16 @@
 
 class Motor{
 	private:
-        #atributos
+        //atributos
         uint8_t _pinoA;
         uint8_t _pinoB;
         bool _inverso;
         uint8_t _velocidade; // PWM
 
 	public:
-        #metodos
+        //metodos
+        Motor(){};
+
 		Motor(uint8_t pinoA, uint8_t pinoB, bool inverso = false, uint8_t velocidade = 128){
             setPinoA(pinoA);
             setPinoB(pinoB);
@@ -88,7 +90,7 @@ class Motor{
 
 		void parar(){
             digitalWrite(getPinoA(), 0);
-            digitalWrite(getPinoB(), 0)
+            digitalWrite(getPinoB(), 0);
 		};
 
 };
